@@ -21,3 +21,5 @@ export type { CurvePoint, MeanMaxPoint } from './mmp.js';
 export { combineCurves, DEFAULT_DURATIONS, meanMaxPower, monotoneEnvelope } from './mmp.js';
 export type { SanitizedPower, SanitizeOptions } from './series.js';
 export { cumulativeWork, sanitizePower } from './series.js';
+export type { WPrimeBalance } from './w-prime-balance.js';
+export { wPrimeBalanceDifferential, wPrimeBalanceIntegral } from './w-prime-balance.js';
