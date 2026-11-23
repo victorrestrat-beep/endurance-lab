@@ -19,6 +19,8 @@ export {
 export type { DurabilityCell, DurabilityOptions, DurabilityRow } from './durability.js';
 export { durabilityProfile } from './durability.js';
 export { ModelInputError } from './errors.js';
+export type { DetectedInterval, IntervalDetectionOptions } from './intervals.js';
+export { detectIntervals } from './intervals.js';
 export type { CurvePoint, MeanMaxPoint } from './mmp.js';
 export { combineCurves, DEFAULT_DURATIONS, meanMaxPower, monotoneEnvelope } from './mmp.js';
 export type { SanitizedPower, SanitizeOptions } from './series.js';
