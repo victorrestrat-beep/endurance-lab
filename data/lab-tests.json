@@ -1,0 +1,20 @@
+{
+  "note": "Reference values from tests in a university exercise-physiology lab. Powers in W, VO2max in mL/kg/min. W' was not measured.",
+  "tests": [
+    {
+      "protocol": "incremental, 5-min stages, blood lactate",
+      "lt1W": 245,
+      "lt2W": 305
+    },
+    {
+      "protocol": "ramp to exhaustion, +25 W/min",
+      "peakPowerW": 425,
+      "vo2maxMlKgMin": 61
+    },
+    {
+      "protocol": "3-min all-out",
+      "cpW": 330,
+      "wPrimeJ": null
+    }
+  ]
+}
