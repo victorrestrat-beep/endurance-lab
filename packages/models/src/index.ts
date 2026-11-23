@@ -1,3 +1,5 @@
+export type { AllOutOptions, AllOutResult } from './all-out.js';
+export { allOutToCpParams, analyzeAllOutTest } from './all-out.js';
 export type {
   Cp3Options,
   CpFit,
