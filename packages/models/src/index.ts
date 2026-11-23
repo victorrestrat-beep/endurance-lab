@@ -16,6 +16,8 @@ export {
   powerForDuration,
   timeToExhaustion,
 } from './critical-power.js';
+export type { DurabilityCell, DurabilityOptions, DurabilityRow } from './durability.js';
+export { durabilityProfile } from './durability.js';
 export { ModelInputError } from './errors.js';
 export type { CurvePoint, MeanMaxPoint } from './mmp.js';
 export { combineCurves, DEFAULT_DURATIONS, meanMaxPower, monotoneEnvelope } from './mmp.js';
