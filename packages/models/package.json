@@ -1,0 +1,33 @@
+{
+  "name": "@endurance-lab/models",
+  "version": "0.1.0",
+  "description": "Endurance physiology models: power-duration curve, critical power, W' balance, durability, intervals and training load.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./synthetic": {
+      "types": "./dist/synthetic.d.ts",
+      "default": "./dist/synthetic.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "cycling",
+    "triathlon",
+    "critical-power",
+    "w-prime",
+    "training-load",
+    "sports-science"
+  ]
+}
