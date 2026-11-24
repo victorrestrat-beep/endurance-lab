@@ -16,9 +16,10 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "bench": "vitest bench --run --reporter=verbose",
+    "field-cp": "pnpm build && node apps/cli/dist/field-cp.js",
     "lint": "biome check .",
     "format": "biome check --write .",
-    "check": "pnpm lint && pnpm typecheck && pnpm coverage && pnpm build"
+    "check": "pnpm lint && pnpm build && pnpm typecheck && pnpm coverage"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.8",

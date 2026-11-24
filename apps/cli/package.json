@@ -1,0 +1,19 @@
+{
+  "name": "@endurance-lab/cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Command-line tools: field critical power from a folder of FIT files.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "field-cp": "./dist/field-cp.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@endurance-lab/fit": "workspace:*",
+    "@endurance-lab/models": "workspace:*"
+  }
+}

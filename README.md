@@ -54,6 +54,17 @@ const efforts = detectIntervals(ride, { threshold: 0.9 * fit.cp });
 const durability = durabilityProfile(ride, { workThresholds: [0, 10, 20, 30], massKg: 80 });
 ```
 
+### Field CP from your own FIT files
+
+`@endurance-lab/fit` decodes activity files with Garmin's FIT SDK and puts them on a 1 Hz grid.
+The `field-cp` command decodes a whole folder (a Garmin export, for example), keeps cycling
+sessions with power, de-duplicates rides recorded by two devices and fits CP per year and over the
+last 90 days. Only aggregated numbers are printed; raw files stay on your machine.
+
+```sh
+pnpm field-cp path/to/fit-files [summary.json]
+```
+
 ## My lab numbers
 
 These values come from tests in a university exercise-physiology lab. They are the reference for
@@ -80,7 +91,7 @@ real riding will be the third opinion.
 
 - **Strict TypeScript.** `strict`, `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes` are
   on, and there is no `any`. Invalid input throws a typed `ModelInputError`.
-- **Tests that check the science.** 90 tests and 100 % line coverage. Every model is tested on
+- **Tests that check the science.** Over 100 tests and close to 100 % line coverage. Every model is tested on
   synthetic data whose answer is known. For example, a trace generated with CP = 330 W and
   W′ = 20 kJ must give those values back, and W′ balance must reach zero exactly at the time to
   exhaustion that the CP model predicts.
@@ -91,16 +102,17 @@ real riding will be the third opinion.
   reference one. For the same reason, fitting goes through `monotoneEnvelope`.
 - **Measured performance.** On a 6-hour ride at 1 Hz (21,600 samples, 5 durations), prefix sums
   take 0.23 ms against 38.5 ms for direct window sums, about 170 times faster (Node 26, laptop).
-- **CI.** GitHub Actions runs lint (Biome), type checking, tests with coverage thresholds and the
-  build on every push and pull request.
+- **CI.** GitHub Actions runs lint (Biome), the build, type checking and tests with coverage thresholds
+  on every push and pull request.
 - **Decisions are written down** in [docs/adr](docs/adr).
 
 ## Roadmap
 
 - [x] **v0.1, models.** Power–duration curve, CP and W′, 3-min test, W′ balance, durability,
       intervals, load.
-- [ ] **v0.2, ingestion.** FIT decoding and cleaning, streams stored as Parquet, PostgreSQL with
-      Drizzle, a Hono API with idempotent uploads.
+- [ ] **v0.2, ingestion.** Done: FIT decoding into clean 1 Hz series (`@endurance-lab/fit`) and a
+      `field-cp` command. Next: streams stored as Parquet, PostgreSQL with Drizzle, a Hono API with
+      idempotent uploads.
 - [ ] **v0.3, dashboard.** Power–duration curve with the fitted model, W′ balance per session,
       durability, load.
 - [ ] **Multisport.** Critical speed and D′ for running, critical swim speed.

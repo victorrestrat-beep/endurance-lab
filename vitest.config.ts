@@ -2,13 +2,14 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    include: ['packages/*/test/**/*.test.ts'],
+    include: ['{packages,apps}/*/test/**/*.test.ts'],
     benchmark: {
       include: ['packages/*/bench/**/*.bench.ts'],
     },
     coverage: {
       provider: 'v8',
-      include: ['packages/*/src/**/*.ts'],
+      include: ['{packages,apps}/*/src/**/*.ts'],
+      exclude: ['apps/cli/src/field-cp.ts'],
       reporter: ['text', 'html', 'lcov'],
       thresholds: {
         statements: 98,

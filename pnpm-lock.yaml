@@ -204,6 +204,21 @@ importers:
         specifier: ^5.1.1
         version: 5.1.1(@types/node@26.6.6)(@vitest/coverage-v8@5.1.1)(vite@8.3.8(@types/node@26.6.6))
 
+  apps/cli:
+    dependencies:
+      '@endurance-lab/fit':
+        specifier: workspace:*
+        version: link:../../packages/fit
+      '@endurance-lab/models':
+        specifier: workspace:*
+        version: link:../../packages/models
+
+  packages/fit:
+    dependencies:
+      '@garmin/fitsdk':
+        specifier: ^21.222.0
+        version: 21.222.0
+
   packages/models: {}
 
 packages:
@@ -306,6 +321,9 @@ packages:
 
   '@emnapi/wasi-threads@2.2.0':
     resolution: {integrity: sha512-JP7OYH38Q7+pyTAe14raZHLQIK7BDKbdwji+Xi3pcd/6QkJYQH3SX4wu6EplGrGJWRepoNzedfm0G3B9Z4e9Rw==}
+
+  '@garmin/fitsdk@21.222.0':
+    resolution: {integrity: sha512-YIo/bPfvENuBKECsAT0wWromTy66Yxw3UqRB1FuAJIs8KMoJCkVPgqnUanFxkZwcAXgIN2qXaeFeRt7rvYlB0g==}
 
   '@jridgewell/resolve-uri@3.1.3':
     resolution: {integrity: sha512-lhTtjtoEArWBjismtfS761S9Hlyn+nIZqOZVYoZ1Xn82PMNMVnk+jj/NhC4fAXGTs7ydONcJiR5vyQBTMDu27g==}
@@ -949,6 +967,8 @@ snapshots:
     dependencies:
       tslib: 2.9.1
     optional: true
+
+  '@garmin/fitsdk@21.222.0': {}
 
   '@jridgewell/resolve-uri@3.1.3': {}
 
