@@ -1,5 +1,7 @@
 # endurance-lab
 
+[![CI](https://github.com/victorrestrat-beep/endurance-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/victorrestrat-beep/endurance-lab/actions/workflows/ci.yml)
+
 Endurance-training analytics in TypeScript, from device files to physiological models.
 
 I'm a long-distance triathlete and a PhD student in sports biomechanics. This repository turns the
